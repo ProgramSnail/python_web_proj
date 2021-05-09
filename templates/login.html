@@ -1,33 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Language Learner</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/static/w3.css">
-        <link rel="stylesheet" href="/static/fontawesome/css/all.css">
-    </head>
-    <body>
-        <header class="w3-container w3-dark-gray">
-            <h1><i class="fas fa-dice-d20"></i> Language Learner</h1>
-        </header>
-        <div class="w3-container w3-margin">
-            <div class="w3-container w3-third"></div>
-            <div class="w3-panel w3-card w3-third">
-                <form method="POST" action="" class="w3-container w3-margin w3-center">
-                    <h2>Log in / Sign up</h2>
-                    <label>Name</label>
-                    <input class="w3-input w3-section" type="text"
-                        name="name" placeholder="Enter Name" required="">
-                    <label>Password</label>
-                    <input class="w3-input w3-section" type="password"
-                        name="password" placeholder="Enter Password" required="">
-                    <input class="w3-button w3-green w3-section" type="submit" value="Submit">
-                </form>
-            </div>
-            <div class="w3-container w3-third"></div>
-        </div>
-        <footer class="w3-container w3-light-gray">
-            <label class="w3-center">My app.</label>
-        </footer>
-    </body>
-</html> 
+{% extends "base.html" %}
+{% block content %}
+<div class="w3-container w3-third"></div>
+<div class="w3-panel w3-card w3-third w3-center">
+    <label class="w3-text-red w3-container">{{ form_msg }}</label>
+    <form method="POST" action="" class="w3-container w3-margin">
+        <h2>Log in / Sign up</h2>
+        <label>Name</label>
+        <input class="w3-input w3-section" type="text"
+            name="name" placeholder="Enter Name" required="">
+        <label>Password</label>
+        <input class="w3-input w3-section" type="password"
+            name="password" placeholder="Enter Password" required="">
+        <input class="w3-button w3-green w3-section" type="submit" value="Submit">
+    </form>
+</div>
+<div class="w3-container w3-third"></div>
+{% endblock %}
